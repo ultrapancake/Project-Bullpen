@@ -1,0 +1,155 @@
+/* 
+Palette
+------------------
+Background: #222831
+Card Background: #393e46
+Main Color: #29a19c
+Highlight Color: #a3f7bf
+
+Body Font Color: #FAFAFA
+
+Fonts
+------------------
+Body: font-family: 'Roboto', sans-serif;
+Overview Card: font-family: 'Anton', sans-serif;
+*/
+
+/* Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
+    height: 100vh;
+}
+
+/* Header/Footer */
+.header {
+    grid-area: header;
+    background-color: #393e46;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #393e46;
+}
+
+.header, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #FAFAFA;
+}
+
+a:link, a:visited {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+a:active {
+    color: #a3f7bf;
+}
+
+.active:link, .active:visited {
+    color: #a3f7bf;
+}
+
+.main {
+    grid-area: main;
+    background-color: #222831;
+}
+
+.main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-auto-rows: 94px;
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #29a19c;
+    border: 2px solid #a3f7bf;
+    border-radius: 15px;
+    color: #FAFAFA
+}
+
+.overviewcard:hover, .overviewcard:focus {
+    box-shadow: 10px 10px 0px #393e46;
+    border: 2px solid #29a19c;
+}
+
+.overviewcard-info {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.overviewcard-icon {
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+}
+
+.add-player-icon {
+    background-image: url(../images/person_add-24px.svg)
+}
+
+.view-players-icon {
+    background-image: url(../images/people_alt-24px.svg)
+}
+
+.add-event-icon {
+    background-image: url(../images/event_available-24px.svg)
+}
+
+.view-events-icon {
+    background-image: url(../images/event_note-24px.svg)
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #393e46;
+    margin-bottom: 20px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+.sidenav {
+    grid-area: sidenav;
+    background-color: #222831;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-right: 2px solid #29a19c;
+}
+
+.sidenav-list {
+    padding: 0;
+    margin-top: 80px;
+    list-style-type: none;
+}
+
+.sidenav-list-item {
+    padding: 20px 20px 20px 40px;
+}
+
+.sidenav-list-item:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
