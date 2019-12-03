@@ -41,3 +41,37 @@ function drawChart() {
 
     chart.draw(data, options);
 }
+
+/* Roll Over Effects for Icons on Buttons*/
+
+$(function(){
+    $('#add-employee').hover(function(){
+        $('#add-player-icon').addClass('add-player-icon-white');
+    }, function(){
+        $('#add-player-icon').removeClass('add-player-icon-white');
+    });
+});
+
+$(function(){
+    $('#view-employee').hover(function(){
+        $('#view-players-icon').addClass('view-players-icon-white');
+    }, function(){
+        $('#view-players-icon').removeClass('view-players-icon-white')
+    })
+});
+
+$(function(){
+    $('#add-project').hover(function(){
+        $('#add-event-icon').addClass('add-event-icon-white');
+    }, function(){
+        $('#add-event-icon').removeClass('add-event-icon-white')
+    })
+});
+
+$(function(){
+    $('#view-project').hover(function(){
+        $('#view-events-icon').addClass('view-events-icon-white');
+    }, function(){
+        $('#view-events-icon').removeClass('view-events-icon-white')
+    })
+});
