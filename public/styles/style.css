@@ -53,11 +53,15 @@ a:link, a:visited {
 }
 
 a:active {
-    color: #29a19c;
+    color: #29a19c !important;
+}
+
+.active {
+    color:#29a19c;
 }
 
 .active:link, .active:visited {
-    color: #29a19c;
+    color: #29a19c !important;
 }
 
 .main {
