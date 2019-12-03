@@ -28,7 +28,7 @@ function drawChart() {
         height: 400,
 
         backgroundColor: {
-            fill: "#393e46"
+            fill: "#ECEFF1"
         },
         gantt: {
             trackHeight: 30,
