@@ -53,11 +53,15 @@ a:link, a:visited {
 }
 
 a:active {
-    color: #a3f7bf;
+    color: #29a19c !important;
+}
+
+.active {
+    color:#29a19c;
 }
 
 .active:link, .active:visited {
-    color: #a3f7bf;
+    color: #29a19c !important;
 }
 
 .main {
@@ -74,30 +78,28 @@ a:active {
 }
 
 .overviewcard {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #29a19c;
-    border: 2px solid #a3f7bf;
-    border-radius: 15px;
-    color: #FAFAFA
+    background-color: transparent;
+    border: 2px solid #29a19c;
+    border-radius: 150px;
+    color: #29a19c !important
 }
 
 .overviewcard:hover, .overviewcard:focus {
-    box-shadow: 10px 10px 0px #393e46;
     border: 2px solid #29a19c;
-}
-
-.overviewcard-info {
-    font-family: 'Anton', sans-serif;
-    text-transform: uppercase;
-    font-size: 3rem;
+    background-color: #29a19c;
+    color: #FAFAFA !important
 }
 
 .overviewcard-icon {
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
     background-size: cover;
 }
 
@@ -105,16 +107,32 @@ a:active {
     background-image: url(../images/person_add-24px.svg)
 }
 
+.add-player-icon-white {
+    background-image: url(../images/person_add-white-24px.svg)
+}
+
 .view-players-icon {
     background-image: url(../images/people_alt-24px.svg)
+}
+
+.view-players-icon-white {
+    background-image: url(../images/people_alt-white-24px.svg)
 }
 
 .add-event-icon {
     background-image: url(../images/event_available-24px.svg)
 }
 
+.add-event-icon-white {
+    background-image: url(../images/event_available-white-24px.svg)
+}
+
 .view-events-icon {
     background-image: url(../images/event_note-24px.svg)
+}
+
+.view-events-icon-white {
+    background-image: url(../images/event_note-white-24px.svg)
 }
 
 .card {
