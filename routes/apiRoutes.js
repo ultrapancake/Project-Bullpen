@@ -15,6 +15,25 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/index", function(req, res) {
+    db.Projects.findAll({}).then(function(dbProjects) {
+      var array = [];
+      for (var i = 0; i < dbProjects.length; i++) {
+        var ranArray = [];
+        ranArray.push(dbProjects.id);
+        ranArray.push(dbProjects.owner);
+        ranArray.push(dbProjects.market);
+        ranArray.push(dbProjects.startDate);
+        ranArray.push(dbProjects.finishDate);
+        ranArray.push(null);
+        ranArray.push(null);
+        ranArray.push(null);
+        array.push(ranArray);
+      }
+      res.json(array);
+    });
+  });
+
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {

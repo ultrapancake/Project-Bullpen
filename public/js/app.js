@@ -12,6 +12,15 @@ function drawChart() {
   data.addColumn("number", "Percent Complete");
   data.addColumn("string", "Dependencies");
 
+  var projectArr;
+  $.ajax({
+    url: "/api/index",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    projectArr.push(response);
+  });
+
   data.addRows([
     [
       "ID-1235",
