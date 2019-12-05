@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bull Pen | Add Game</title>
+    <title>Bullpen | Add Project</title>
 
     <link href="https://fonts.googleapis.com/css?family=Anton|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -72,45 +72,62 @@
                         <div class="container" style="width: 80%;">
                             <div class="row form">
                                 <div class="col-md-4">
-                                    <img src="../public/images/Project-Placeholder.jpg" alt="project" class="img-fluid">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img src="../public/images/Project-Placeholder.jpg" alt="project" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <br>                                  
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="project" name="customRadio" class="custom-control-input">
+                                                <label class="custom-control-label" for="project">Project (Under Contract)</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="lead" name="customRadio" class="custom-control-input">
+                                                <label class="custom-control-label" for="lead">Lead (Pursuit)</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label class="h5 float-left text-strong" for="projName">Project Name: </label><input type="text" class="form-control" id="projName">
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <label class="h5 float-left text-strong" for="projOwner">Owner/Client: </label><input type="text" class="form-control" id="projOwn">
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col" style="padding-left: 0;">
+                                                <label class="h5 text-strong" for="projVal">Contract Value: </label>
+                                                <span class="input-group-addon">$</span><input type="text" class="form-control" id= "projVal"/>
+                                            </div>
 
-                                    <div class="row">
-                                        <label class="h5 float-left text-strong" for="projName">Project Name: </label><input type="text" class="form-control" id="projName">
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <label class="h5 float-left text-strong" for="projOwner">Owner/Client: </label><input type="text" class="form-control" id="projOwn">
-                                    </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col" style="padding-left: 0;">
-                                        <label class="h5 text-strong" for="projVal">Contract Value: </label>
-                                        <span class="input-group-addon">$</span><input type="text" class="form-control" id= "projVal"/>
-                                    </div>
-
-                                    <div class="col" style="padding-right: 0;">
-                                        <label class="h5 float-left text-strong" for="projMarket">Market Sector: </label><input type="text" class="form-control" id="projMarket">
+                                            <div class="col" style="padding-right: 0;">
+                                                <label class="h5 float-left text-strong" for="projMarket">Market Sector: </label><input type="text" class="form-control" id="projMarket">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col" style="padding-left: 0;">
+                                                <label class="h5 text-strong" for="projStart">Project Start: </label><input type="date" class="form-control" id="projStart">
+                                            </div>
+                                            <div class="col" style="padding-right: 0;">
+                                                <label class="h5 text-strong" for="projFinish">Project Finish: </label><input type="date" class="form-control" id="projFinish">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row float-right">
+                                            <button type="button" id="addProj" class="btn btn-primary my-2" style="width: 180px">Create Project</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col" style="padding-left: 0;">
-                                        <label class="h5 text-strong" for="projStart">Project Start: </label><input type="date" class="form-control" id="projStart">
-                                    </div>
-
-                                    <div class="col" style="padding-right: 0;">
-                                        <label class="h5 text-strong" for="projFinish">Project Finish: </label><input type="date" class="form-control" id="projFinish">
-                                    </div>
-                                </div>
-
-                                    <br>
-                                    <button type="button" id="addProj" class="btn btn-primary my-2 float-right" style="width: 180px">Create Project</button>
-
-                                </div>
+                            </div>
                         </div>
-                    </div>
 
         </main>
 
