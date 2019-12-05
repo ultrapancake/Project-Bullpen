@@ -1,7 +1,14 @@
 var projectArr;
 $.ajax({
   url: "/api/index",
-  method: "GET"
+  type: "GET",
+  crossDomain: true,
+  headers: {
+    Authorization: "Basic " + btoa("_system:SYS"),
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
+  }
 }).then(function(response) {
   console.log(response);
   projectArr.push(response);
