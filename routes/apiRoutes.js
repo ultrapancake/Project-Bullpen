@@ -42,8 +42,13 @@ module.exports = function(app) {
   });
 
   app.post("/api/add-employee", function(req, res) {
-    db.Employees.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Employees.create(req.body).then(function(dbEmployees) {
+      res.json(dbEmployees);
+    });
+  });
+  app.post("/api/add-project", function(req, res) {
+    db.Projects.create(req.body).then(function(dbProjects) {
+      res.json(dbProjects);
     });
   });
 
