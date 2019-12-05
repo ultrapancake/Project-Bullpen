@@ -1,12 +1,13 @@
 $(document).ready(function() {
   $("#addEmp").click(function() {
     //grabbing user input from form on add-employee page
+    event.preventDefault();
     var newEmployee = {
       firstName: $("#firstName").val(),
       lastName: $("#lastName").val(),
       empID: $("#empID").val(),
       title: $("#empTitle").val(),
-      markets: $("empMarkets").val()
+      markets: $("#empMarkets").val()
     };
     $("#firstName").val("");
     $("#lastName").val("");
