@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Projects.associate = function(models) {
-    Projects.belongsToMany(models.empID, {
+    Projects.belongsTo(models.empID, {
       foreignKey: {
         allowNull: false
       }
