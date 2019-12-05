@@ -1,3 +1,12 @@
+var projectArr;
+$.ajax({
+  url: "/api/index",
+  method: "GET"
+}).then(function(response) {
+  console.log(response);
+  projectArr.push(response);
+});
+
 google.charts.load("current", { packages: ["gantt"] });
 google.charts.setOnLoadCallback(drawChart);
 
@@ -12,57 +21,7 @@ function drawChart() {
   data.addColumn("number", "Percent Complete");
   data.addColumn("string", "Dependencies");
 
-  var projectArr;
-  $.ajax({
-    url: "/api/index",
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-    projectArr.push(response);
-  });
-
-  data.addRows([
-    [
-      "ID-1235",
-      "Project One",
-      "Project",
-      new Date(2014, 2, 22),
-      new Date(2014, 5, 20),
-      null,
-      null,
-      null
-    ],
-    [
-      "ID-12234535",
-      "Project Two",
-      "Bid",
-      new Date(2014, 8, 22),
-      new Date(2014, 10, 20),
-      null,
-      null,
-      null
-    ],
-    [
-      "ID-8560",
-      "Project Three",
-      "Bid",
-      new Date(2014, 6, 22),
-      new Date(2014, 8, 20),
-      null,
-      null,
-      null
-    ],
-    [
-      "ID-3494",
-      "Project Four",
-      "Project",
-      new Date(2014, 1, 22),
-      new Date(2014, 8, 20),
-      null,
-      null,
-      null
-    ]
-  ]);
+  data.addRows([projectArr]);
 
   var options = {
     height: 400,
