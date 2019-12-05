@@ -18,18 +18,20 @@ module.exports = function(app) {
   app.get("/api/index", function(req, res) {
     db.Projects.findAll({}).then(function(dbProjects) {
       var array = [];
+      console.log(eval(dbProjects[0].startDate));
       for (var i = 0; i < dbProjects.length; i++) {
         var ranArray = [];
-        ranArray.push(dbProjects.id);
-        ranArray.push(dbProjects.owner);
-        ranArray.push(dbProjects.market);
-        ranArray.push(dbProjects.startDate);
-        ranArray.push(dbProjects.finishDate);
+        ranArray.push(dbProjects[i].id.toString());
+        ranArray.push(dbProjects[i].owner);
+        ranArray.push(dbProjects[i].market);
+        ranArray.push(eval(dbProjects[i].startDate));
+        ranArray.push(eval(dbProjects[i].finishDate));
         ranArray.push(null);
         ranArray.push(null);
         ranArray.push(null);
         array.push(ranArray);
       }
+      console.log(array);
       res.json(array);
     });
   });
