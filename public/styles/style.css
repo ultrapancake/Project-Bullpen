@@ -147,6 +147,21 @@ a:active {
     box-sizing: border-box;
 }
 
+/* View Employee Card */
+.market {
+    font-size: 1.25rem;
+}
+
+.employeeTitle {
+    font-size: 1.5rem;
+    color: #BDBDBD;
+}
+.employeeName {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 /* View Projects Card */
 
 .card {
