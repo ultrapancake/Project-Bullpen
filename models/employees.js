@@ -6,5 +6,14 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     markets: DataTypes.STRING
   });
+
+  Employees.associate = function(models) {
+    Employees.belongsToMany(Projects, {
+      as: [employeeForeignId],
+      through: [populatedProject],
+      foreignKey: "Employees_rowId"
+    });
+  };
+
   return Employees;
 };

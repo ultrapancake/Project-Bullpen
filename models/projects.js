@@ -10,11 +10,12 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Projects.associate = function(models) {
-    Projects.belongsToMany(models.empID, {
-      foreignKey: {
-        allowNull: false
-      }
+    Projects.belongsToMany(Employees, {
+      as: [projForeignId],
+      through: [populatedProject], //this can be string or a model,
+      foreignKey: "Projects_rowID"
     });
   };
+
   return Projects;
 };

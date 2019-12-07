@@ -1,8 +1,12 @@
 // This helps Define the Many to Many relationships
 module.exports = function(sequelize, DataTypes) {
-  UserProject = sequelize.define("user_project", {
-    role: Sequelize.STRING
+  populatedProject = sequelize.define("populatedProject", {
+    empID: Sequelize.INTEGER,
+    projName: Sequelize.STRING,
+    owner: Sequelize.STRING
   });
-  User.belongsToMany(Project, { through: UserProject });
-  Project.belongsToMany(User, { through: UserProject });
+  Employees.belongsToMany(Projects, { through: populatedProject });
+  Projects.belongsToMany(Employees, { through: populatedProject });
+
+  return populatedProject;
 };
