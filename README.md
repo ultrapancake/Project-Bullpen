@@ -2,7 +2,7 @@
 Resource Management Tool for Projects and Leads
 
 <p align="center">
-<img width="600" height="340" src="public/images/ProjectBullpenEhiteBetter.png" width="100%"/>
+<img width="600" height="340" src="public/images/ProjectBullpenWhiteBetter.png" width="100%"/>
 </p>
 
 ---
