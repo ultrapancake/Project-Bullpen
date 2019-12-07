@@ -135,7 +135,7 @@ a:active {
     background-image: url(../images/event_note-white-24px.svg)
 }
 
-.card {
+.chart-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,6 +147,47 @@ a:active {
     box-sizing: border-box;
 }
 
+/* View Projects Card */
+
+.card {
+    background-color: #393e46
+}
+
+.project {
+    background-color: #1E88E5;
+}
+
+.lead {
+    background-color: #EF5350;
+}
+
+.btn {
+    background-color: transparent;
+    border: 2px solid #29a19c;
+    color: #29a19c !important;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #29a19c;
+    border: 2px solid #29a19c;
+    color: #FAFAFA !important;
+}
+
+.contractValue {
+    color: #69F0AE;
+    font-size: 1.25rem;
+}
+
+.market {
+    font-size: 1.25rem;
+}
+
+.startDate, .finishDate, .dash {
+    font-size: 1.75rem;
+}
+.projName, .client {
+    font-size: 2rem;
+}
 /* Navigation */
 .sidenav {
     grid-area: sidenav;

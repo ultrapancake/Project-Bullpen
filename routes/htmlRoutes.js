@@ -16,22 +16,22 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   app.get("/add-employee", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add-game.html"));
+    res.sendFile(path.join(__dirname, "../public/add-project.html"));
   });
   app.get("/add-project", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add-player.html"));
+    res.sendFile(path.join(__dirname, "../public/add-employee.html"));
   });
   app.get("/remove-employee", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/remove-player.html"));
+    res.sendFile(path.join(__dirname, "../public/remove-employee.html"));
   });
   app.get("/remove-project", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/remove-game.html"));
+    res.sendFile(path.join(__dirname, "../public/remove-project.html"));
   });
   app.get("/view-employees", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view-players.html"));
+    res.sendFile(path.join(__dirname, "../public/view-employees.html"));
   });
   app.get("/view-projects", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view-games.html"));
+    res.sendFile(path.join(__dirname, "../public/view-projects.html"));
   });
 
   // Load example page and pass in an example by id
