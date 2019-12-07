@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     contractValue: DataTypes.INTEGER,
     market: DataTypes.STRING,
     startDate: DataTypes.STRING,
-    finishDate: DataTypes.STRING
+    finishDate: DataTypes.STRING,
+    projType: DataTypes.STRING
   });
 
   //   Projects.associate = function(models) {
