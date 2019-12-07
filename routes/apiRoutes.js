@@ -18,7 +18,7 @@ module.exports = function(app) {
   app.get("/api/index", function(req, res) {
     db.Projects.findAll({}).then(function(dbProjects) {
       var array = [];
-      console.log(eval(dbProjects[0].startDate));
+      // console.log(eval(dbProjects[0].startDate));
       for (var i = 0; i < dbProjects.length; i++) {
         var ranArray = [];
         ranArray.push(dbProjects[i].id.toString());
@@ -37,30 +37,9 @@ module.exports = function(app) {
   });
 
   app.get("/api/view-projects", function(req, res) {
-    tempObj = {};
     db.Projects.findAll({}).then(function(dbProjects) {
-      console.log(dbProjects);
-      tempObj.push(dbProjects.projType);
-      tempObj.push(dbProjects.projName);
-      tempObj.push(dbProjects.owner);
-      tempObj.push(dbProjects.market);
-      tempObj.push(dbProjects.contractValue);
-      var startDate = new Date(dbProjects.startDate);
-      var monthStartDate = startDate.getMonth();
-      var dateStartDate = startDate.getDate();
-      var yearStartDate = startDate.getFullYear();
-      startDate = monthStartDate + "/" + dateStartDate + "/" + yearStartDate;
-      tempObj.push(startDate);
-      var finishDate = new Date(dbProjects.finishDate);
-      var monthFinishDate = finishDate.getMonth();
-      var dateFinishDate = finishDate.getDate();
-      var yearFinishDate = finishDate.getFullYear();
-      finishDate =
-        monthFinishDate + "/" + dateFinishDate + "/" + yearFinishDate;
-      tempObj.push(finishDate);
-      tempObj.push(id);
-      console.log(tempObj);
-      res.json(tempObj);
+      //send full Object and allow front end to loop through what they need.
+      res.json(dbProjects);
     });
   });
 
