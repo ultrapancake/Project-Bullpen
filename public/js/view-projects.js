@@ -14,9 +14,6 @@ $(document).ready(function() {
   });
 
   function appendProjects(viewProjObj) {
-    console.log(
-      "response obj view-project.js line 17: " + JSON.stringify(viewProjObj)
-    );
     for (var i = 0; i < viewProjObj.length; i++) {
       var projType = viewProjObj[i].projType;
       var projName = viewProjObj[i].projName;
@@ -29,14 +26,12 @@ $(document).ready(function() {
       var dateStartDate = startDate.getDate();
       var yearStartDate = startDate.getFullYear();
       startDate = monthStartDate + "/" + dateStartDate + "/" + yearStartDate;
-      console.log("startDate: " + startDate);
 
       var endDate = new Date(viewProjObj[i].finishDate);
       var monthFinishDate = endDate.getMonth();
       var dateFinishDate = endDate.getDate();
       var yearFinishDate = endDate.getFullYear();
       endDate = monthFinishDate + "/" + dateFinishDate + "/" + yearFinishDate;
-      console.log("finish date: " + endDate);
 
       var uniqueId = viewProjObj[i].id;
 
