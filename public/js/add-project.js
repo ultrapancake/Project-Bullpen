@@ -36,8 +36,8 @@ $(document).ready(function() {
       owner: $("#projOwn").val(),
       contractValue: $("#projVal").val(),
       market: $("#projMarket").val(),
-      startDate: startDate,
-      finishDate: finishDate,
+      startDate: eval(startDate),
+      finishDate: eval(finishDate),
       projType: type
     };
 

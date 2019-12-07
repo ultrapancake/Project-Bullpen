@@ -8,9 +8,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Employees.associate = function(models) {
-    Employees.belongsToMany(Projects, {
-      as: [employeeForeignId],
-      through: [populatedProject],
+    Employees.belongsToMany(models.Projects, {
+      // as: "employeeId",
+      through: models.populatedProject,
       foreignKey: "Employees_rowId"
     });
   };
