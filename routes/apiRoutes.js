@@ -18,7 +18,7 @@ module.exports = function(app) {
   app.get("/api/index", function(req, res) {
     db.Projects.findAll({}).then(function(dbProjects) {
       var array = [];
-      console.log(eval(dbProjects[0].startDate));
+      // console.log(eval(dbProjects[0].startDate));
       for (var i = 0; i < dbProjects.length; i++) {
         var ranArray = [];
         ranArray.push(dbProjects[i].id.toString());
@@ -33,6 +33,13 @@ module.exports = function(app) {
       }
       console.log(array);
       res.json(array);
+    });
+  });
+
+  app.get("/api/view-projects", function(req, res) {
+    db.Projects.findAll({}).then(function(dbProjects) {
+      //send full Object and allow front end to loop through what they need.
+      res.json(dbProjects);
     });
   });
 
