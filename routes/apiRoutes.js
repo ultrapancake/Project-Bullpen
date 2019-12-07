@@ -23,7 +23,7 @@ module.exports = function(app) {
         var ranArray = [];
         ranArray.push(dbProjects[i].id.toString());
         ranArray.push(dbProjects[i].owner);
-        ranArray.push(dbProjects[i].market);
+        ranArray.push(dbProjects[i].projType);
         ranArray.push(eval(dbProjects[i].startDate));
         ranArray.push(eval(dbProjects[i].finishDate));
         ranArray.push(null);
