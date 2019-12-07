@@ -10,7 +10,6 @@ $.ajax({
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
   }
 }).then(function(response) {
-  console.log(response);
   response.forEach(function(res) {
     res[3] = new Date(res[3]);
     res[4] = new Date(res[4]);
@@ -31,7 +30,6 @@ function drawChart() {
   data.addColumn("number", "Duration");
   data.addColumn("number", "Percent Complete");
   data.addColumn("string", "Dependencies");
-  console.log(projectArr);
 
   data.addRows(projectArr);
 
