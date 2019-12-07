@@ -2,7 +2,7 @@
 Resource Management Tool for Projects and Leads
 
 <p align="center">
-<img width="600" height="340" src="/public/images/ProjectBullpenEhiteBetter.png" width="100%"/>
+<img width="600" height="340" src="public/images/ProjectBullpenEhiteBetter.png" width="100%"/>
 </p>
 
 ---
@@ -13,11 +13,6 @@ Project Bullpen allows users to create a roster of employees (resources) and a l
 
 * Analyze their current resources against current projects or potential opportunities/leads.
 * Determine, on a timescale, where all resources are deployed, where additional resources are needed (new hires), or where too many resources are "riding the bench."
-
----
-### Project Bullpen Access
-
-Click here to create your [MovieMate](https://bootcampmoviemate.herokuapp.com/) account and start sharing your favorite movies with your mates!
 
 ---
 ### APIs
@@ -33,17 +28,18 @@ A working version of Project Bullpen can be found at [https://project-2-bullpen.
 ### Technology Used
 * HTML | CSS
 * Heroku
-* 
+* JavaScript & jQuery
+* MySQL
 
 ----
 ### Plugins
 * [Bootstrap](https://getbootstrap.com/)
-* 
+* Sequelize
 
 ----
 ### © 2019 Built By
 
  - [Jack Larsen](https://github.com/mememoomoo): Frontend & JS | [LinkedIn](https://www.linkedin.com/in/jack-larsen-760302138/)
  - [Glen Larsen](https://github.com/ultrapancake): Backend
- - [Levi Lee](https://github.com/levi501lee): | [LinkedIn](https://www.linkedin.com/in/levi-lee-49b18210/)
- - [Mike Carey](https://github.com/careymp1017): Idea and GUI Guy (Frontend) | [LinkedIn](https://www.linkedin.com/in/mpcarey/)
+ - [Levi Lee](https://github.com/levi501lee): Auth0 | [LinkedIn](https://www.linkedin.com/in/levi-lee-49b18210/)
+ - [Mike Carey](https://github.com/careymp1017): GUI/Idea Guy (Frontend) | [LinkedIn](https://www.linkedin.com/in/mpcarey/)
