@@ -6,5 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     markets: DataTypes.STRING
   });
+
+  Author.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Author.belongsToMany(models.Post, {
+      onDelete: "cascade"
+    });
+  };
   return Employee;
 };

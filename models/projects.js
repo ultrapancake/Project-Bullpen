@@ -8,12 +8,12 @@ module.exports = function(sequelize, DataTypes) {
     finishDate: DataTypes.STRING
   });
 
-  //   Projects.associate = function(models) {
-  //     Projects.belongsTo(models.empID, {
-  //       foreignKey: {
-  //         allowNull: false
-  //       }
-  //     });
-  //   };
+  Projects.associate = function(models) {
+    Projects.belongsToMany(models.empID, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Projects;
 };
