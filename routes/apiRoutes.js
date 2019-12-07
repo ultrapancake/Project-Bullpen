@@ -24,8 +24,8 @@ module.exports = function(app) {
         ranArray.push(dbProjects[i].id.toString());
         ranArray.push(dbProjects[i].owner);
         ranArray.push(dbProjects[i].projType);
-        ranArray.push(eval(dbProjects[i].startDate));
-        ranArray.push(eval(dbProjects[i].finishDate));
+        ranArray.push(dbProjects[i].startDate);
+        ranArray.push(dbProjects[i].finishDate);
         ranArray.push(null);
         ranArray.push(null);
         ranArray.push(null);

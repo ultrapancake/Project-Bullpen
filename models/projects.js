@@ -9,12 +9,13 @@ module.exports = function(sequelize, DataTypes) {
     projType: DataTypes.STRING
   });
 
-  //   Projects.associate = function(models) {
-  //     Projects.belongsTo(models.empID, {
-  //       foreignKey: {
-  //         allowNull: false
-  //       }
-  //     });
-  //   };
+  Projects.associate = function(models) {
+    Projects.belongsToMany(models.Employees, {
+      // as: [projForeignId],
+      through: models.populatedProject, //this can be string or a model,
+      foreignKey: "Projects_rowId"
+    });
+  };
+
   return Projects;
 };
