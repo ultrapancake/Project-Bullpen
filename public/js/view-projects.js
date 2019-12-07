@@ -1,4 +1,4 @@
-var viewProjectsArr = [];
+var viewProjectsArr = {}};
 $.ajax({
   url: "/api/view-projects",
   type: "GET",

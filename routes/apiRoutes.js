@@ -36,6 +36,34 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/view-projects", function(req, res) {
+    tempObj = {};
+    db.Projects.findAll({}).then(function(dbProjects) {
+      console.log(dbProjects);
+      tempObj.push(dbProjects.projType);
+      tempObj.push(dbProjects.projName);
+      tempObj.push(dbProjects.owner);
+      tempObj.push(dbProjects.market);
+      tempObj.push(dbProjects.contractValue);
+      var startDate = new Date(dbProjects.startDate);
+      var monthStartDate = startDate.getMonth();
+      var dateStartDate = startDate.getDate();
+      var yearStartDate = startDate.getFullYear();
+      startDate = monthStartDate + "/" + dateStartDate + "/" + yearStartDate;
+      tempObj.push(startDate);
+      var finishDate = new Date(dbProjects.finishDate);
+      var monthFinishDate = finishDate.getMonth();
+      var dateFinishDate = finishDate.getDate();
+      var yearFinishDate = finishDate.getFullYear();
+      finishDate =
+        monthFinishDate + "/" + dateFinishDate + "/" + yearFinishDate;
+      tempObj.push(finishDate);
+      tempObj.push(id);
+      console.log(tempObj);
+      res.json(tempObj);
+    });
+  });
+
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
