@@ -67,7 +67,7 @@ $(document).ready(function() {
         </div>
         <div class="row">
             <div class="col-12">
-                <a href="/employee/:${uniqueId}" class="mt-4 btn btn-primary viewProj">View Project</a>
+                <a href="/project/:${uniqueId}" class="mt-4 btn btn-primary viewProj">View Project</a>
             </div>
         </div>
       </div>
