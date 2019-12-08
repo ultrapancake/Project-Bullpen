@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/ultrapancake/Project-Bullpen/issues"
   },
-  "homepage": "https://github.com/ultrapancake/Project-Bullpen#readme"
+  "homepage": "https://github.com/ultrapancake/Project-Bullpen#readme",
+  "directories": {
+    "lib": "lib"
+  }
 }
