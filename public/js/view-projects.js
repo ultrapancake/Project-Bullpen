@@ -43,7 +43,7 @@ $(document).ready(function() {
         projColor = "project";
       }
 
-      var appendFront = `<div class="card mt-4 mr-4 ml-4">
+      var appendFront = `<div class="card mt-2 mb-2 mr-4 ml-4">
       <div class="card-header projType ${projColor}">${projType}</div>
       <div class="card-body">
         <div class="row">
@@ -67,7 +67,7 @@ $(document).ready(function() {
         </div>
         <div class="row">
             <div class="col-12">
-                <a id="${uniqueId}" class="mt-4 btn btn-primary viewProj">View Project</a>
+                <a href="/employee/:${uniqueId}" class="mt-4 btn btn-primary viewProj">View Project</a>
             </div>
         </div>
       </div>
