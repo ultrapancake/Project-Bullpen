@@ -9,9 +9,30 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/employees", function(req, res) {
-    db.Employees.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
+  app.get("/api/view-employees", function(req, res) {
+    db.Employees.findAll({}).then(function(dbEmployees) {
+      var tempObj = dbEmployees;
+      var popProj = [];
+      for (var i = 0; i < tempObj.length; i++) {
+        db.populatedProject
+          .findAll({
+            where: { empID: tempObj[i].empID }
+          })
+          .then(function(dbPopulatedProject) {
+            console.log(
+              "PopProj apiRoutes line 25: " + JSON.stringify(dbPopulatedProject)
+            );
+            popProj.push(dbPopulatedProject);
+          });
+      }
+      tempObj.push(popProj).Result;
+      console.log(
+        "dbEmployees apiRoutes.js line 14: " + JSON.stringify(dbEmployees)
+      );
+      console.log(
+        "dbEmployees apiRoutes.js line 32: " + JSON.stringify(tempObj)
+      );
+      res.json(tempObj);
     });
   });
 
