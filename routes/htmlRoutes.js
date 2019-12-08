@@ -33,6 +33,9 @@ module.exports = function(app) {
   app.get("/view-projects", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/view-projects.html"));
   });
+  app.get("/employee/:id", function(req, res) {
+    
+  })
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
