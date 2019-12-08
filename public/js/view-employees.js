@@ -17,7 +17,7 @@ $.ajax({
     var lastName = response[i].lastName;
     var employeeMarket = response[i].markets;
     var employeeTitle = response[i].title;
-    var employeeProjects = empProjects[i];
+    // var employeeProjects = empProjects[i];
     var employeeId = response[i].id;
     // var empID = response[i].empID;
     console.log(response[i]);
@@ -36,13 +36,10 @@ $.ajax({
         <div class="col-6">
           <h3 class="card-title employeeTitle">${employeeTitle}</h3>
         </div>
-        <div class="col-6">
-          <h4 class="card-title employeeProjects">${employeeProjects}</h4>
-        </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <a id="${employeeId}"class="btn btn-primary">More Info</a>
+          <a href="/employee/id:${employeeId}"class="btn btn-primary">More Info</a>
         </div>
       </div>
     </div>
@@ -51,3 +48,7 @@ $.ajax({
     $("#employee-div").append(empAppend);
   }
 });
+
+{/* <div class="col-6">
+<h4 class="card-title employeeProjects">${employeeProjects}</h4>
+</div> */}
