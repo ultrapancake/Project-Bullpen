@@ -14,6 +14,10 @@ Body: font-family: 'Roboto', sans-serif;
 Overview Card: font-family: 'Anton', sans-serif;
 */
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Grid */
 .grid-container {
     display: grid;
@@ -195,6 +199,7 @@ a:active {
 
 .market {
     font-size: 1.25rem;
+    text-transform: capitalize;
 }
 
 .startDate, .finishDate, .dash {
@@ -202,6 +207,11 @@ a:active {
 }
 .projName, .client {
     font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.projType {
+    text-transform: capitalize;
 }
 /* Navigation */
 .sidenav {
@@ -217,6 +227,9 @@ a:active {
     padding: 0;
     margin-top: 80px;
     list-style-type: none;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
 .sidenav-list-item {
