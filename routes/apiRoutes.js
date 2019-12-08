@@ -64,6 +64,16 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/employees/:id", function(req, res) {
+    db.Employees.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbEmployees) {
+      res.json(dbEmployees);
+    });
+  });
+
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
