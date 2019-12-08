@@ -14,6 +14,13 @@ Body: font-family: 'Roboto', sans-serif;
 Overview Card: font-family: 'Anton', sans-serif;
 */
 
+:root {
+    --main-color: #222831;
+    --second-color: #393e46;
+    --highlight-color: #4facfe;
+    --body-font: #FAFAFA;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -30,12 +37,12 @@ html {
 /* Header/Footer */
 .header {
     grid-area: header;
-    background-color: #393e46;
+    background-color: var(--second-color);
 }
 
 .footer {
     grid-area: footer;
-    background-color: #393e46;
+    background-color: var(--second-color);
 }
 
 .header, .footer {
@@ -48,29 +55,29 @@ html {
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #FAFAFA;
+    color: var(--body-font);
 }
 
 a:link, a:visited {
-    color: #FAFAFA;
+    color: var(--body-font);
     text-decoration: none;
 }
 
 a:active {
-    color: #29a19c !important;
+    color: var(--highlight-color) !important;
 }
 
 .active {
-    color:#29a19c;
+    color: var(--highlight-color);
 }
 
 .active:link, .active:visited {
-    color: #29a19c !important;
+    color: var(--highlight-color) !important;
 }
 
 .main {
     grid-area: main;
-    background-color: #222831;
+    background-color: var(--main-color);
 }
 
 .main-overview {
@@ -90,15 +97,15 @@ a:active {
     justify-content: space-between;
     padding: 20px;
     background-color: transparent;
-    border: 2px solid #29a19c;
+    border: 2px solid var(--highlight-color);
     border-radius: 150px;
-    color: #29a19c !important
+    color: var(--highlight-color) !important
 }
 
 .overviewcard:hover, .overviewcard:focus {
-    border: 2px solid #29a19c;
-    background-color: #29a19c;
-    color: #FAFAFA !important
+    border: 2px solid var(--highlight-color);
+    background-color: var(--highlight-color);
+    color: var(--body-font) !important
 }
 
 .overviewcard-icon {
@@ -144,7 +151,7 @@ a:active {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #393e46;
+    background-color: var(--second-color);
     margin-bottom: 20px;
     -webkit-column-break-inside: avoid;
     padding: 24px;
@@ -169,7 +176,7 @@ a:active {
 /* View Projects Card */
 
 .card {
-    background-color: #393e46
+    background-color: var(--second-color)
 }
 
 .project {
@@ -182,14 +189,14 @@ a:active {
 
 .btn {
     background-color: transparent;
-    border: 2px solid #29a19c;
-    color: #29a19c !important;
+    border: 2px solid var(--highlight-color);
+    color: var(--highlight-color) !important;
 }
 
 .btn:hover, .btn:focus {
-    background-color: #29a19c;
-    border: 2px solid #29a19c;
-    color: #FAFAFA !important;
+    background-color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+    color: var(--body-font) !important;
 }
 
 .contractValue {
@@ -216,11 +223,11 @@ a:active {
 /* Navigation */
 .sidenav {
     grid-area: sidenav;
-    background-color: #222831;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-right: 2px solid #29a19c;
+    border-right: 2px solid var(--highlight-color);
 }
 
 .sidenav-list {
