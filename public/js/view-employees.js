@@ -9,15 +9,20 @@ $.ajax({
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
   }
 }).then(function(response) {
+  console.log("View Employees response: " + JSON.stringify(response));
+  var empProjects = response.pop();
+  console.log(empProjects);
   for (var i = 0; i < response.length; i++) {
     var firstName = response[i].firstName;
     var lastName = response[i].lastName;
-    var employeeMarket = response[i].market;
+    var employeeMarket = response[i].markets;
     var employeeTitle = response[i].title;
-    var employeeProjects = response[i].projects;
-    var employeeId = response[i].employeeId;
-    
-    let append = `<div class="card mt-4 mr-4 ml-4">
+    var employeeProjects = empProjects[i];
+    var employeeId = response[i].id;
+    // var empID = response[i].empID;
+    console.log(response[i]);
+
+    let empAppend = `<div class="card mt-4 mr-4 ml-4">
     <div class="card-body">
       <div class="row">
         <div class="col-6">
@@ -41,8 +46,8 @@ $.ajax({
         </div>
       </div>
     </div>
-  </div>`
+  </div>`;
 
-  $("employee-div").append(append);
-}
+    $("#employee-div").append(empAppend);
+  }
 });
