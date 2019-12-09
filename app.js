@@ -1,5 +1,3 @@
-// app.js
-
 var session = require("express-session");
 
 // config express-session
@@ -20,7 +18,7 @@ if (app.get("env") === "production") {
   // app.set('trust proxy', 1);
 }
 
-app.use(session(sess));
+// app.use(session(sess));
 
 // app.js
 
@@ -51,10 +49,6 @@ var strategy = new Auth0Strategy(
 
 passport.use(strategy);
 
-// The following two lines might need to move to the end
-app.use(passport.initialize());
-app.use(passport.session());
-
 // app.js
 
 var userInViews = require("./lib/middleware/userInViews");
@@ -68,3 +62,7 @@ app.use("/", authRouter);
 app.use("/", indexRouter);
 app.use("/", usersRouter);
 // ..
+
+// The following two lines might need to move to the end
+app.use(passport.initialize());
+app.use(passport.session());
