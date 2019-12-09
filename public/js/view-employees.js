@@ -22,7 +22,42 @@ $.ajax({
     // var empID = response[i].empID;
     console.log(response[i]);
 
-    let empAppend = `<div class="card mt-4 mr-4 ml-4">
+    let empAppend = `          <div class="modal fade" id="${employeeId}" tabindex="-1" role="dialog" aria-labelledby="modal${firstName}${lastName}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal${firstName}${lastName}">${firstName} ${lastName}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="firstName${employeeId}" value="${firstName}">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="lastName${employeeId}" value="${lastName}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="market${employeeId}" value="${employeeMarket}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="title${employeeId}" value="${employeeTitle}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="title${employeeId}" value="${employeeId}">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-fill btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="card mt-4 mr-4 ml-4">
     <div class="card-body">
       <div class="row">
         <div class="col-6">
@@ -40,7 +75,9 @@ $.ajax({
       <div class="row">
         <div class="col-6">
           <a class="btn btn-primary mr-2" id="moreInfo" data-id="${employeeId}">More Info</a>
-          <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${employeeId}">Edit Employee</a>
+          <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#${employeeId}">
+              Edit
+            </button>
         </div>
         <div class="col-6">
           <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}" data-name="${firstName} ${lastName}">Delete</a>

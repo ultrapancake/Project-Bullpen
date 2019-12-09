@@ -69,41 +69,68 @@
       </aside>
 
       <main id="main-div" class="main">
-        <div class="card mt-2 mb-2 mr-4 ml-4">
-          <div class="card-header projType ${projColor}">${projType}</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                <h1 class="card-title projName">${projName}</h1>
-              </div>
-              <div class="col-6">
-                <h2 class="card-title client">${clientName}</h2>
+          <div class="modal fade" id="${employeeId}" tabindex="-1" role="dialog" aria-labelledby="modal${firstName}${lastName}" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal${firstName}${lastName}">${firstName} ${lastName}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="firstName${employeeId}" value="${firstName}">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="lastName${employeeId}" value="${lastName}">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="market${employeeId}" value="${employeeMarket}">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="title${employeeId}" value="${employeeTitle}">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="title${employeeId}" value="${employeeId}">
+                          </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-fill btn-primary">Save changes</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-6">
-                <h3 class="card-title market">${market}</h3>
-              </div>
-              <div class="col-6">
-                <h4 class="card-title contractValue">$${contractValue}</h4>
-              </div>
-            </div>
-            <div class="row">
-              <p class="ml-3 card-text startDate">${startDate}</p>
-              <p class="dash">-</p>
-              <p class="finishDate">${endDate}</p>
-            </div>
-            <div class="row mt-2">
-                <div class="col-6">
-                    <a class="btn btn-primary mr-2" id="moreInfo" data-id="${uniqueId}">More Info</a>
-                    <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${uniqueId}">Edit Employee</a>
+          <div class="card mt-4 mr-4 ml-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <h1 class="card-title employeeName">${firstName} ${lastName}</h1>
                   </div>
                   <div class="col-6">
-                    <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${uniqueId}">Delete</a>
+                    <h2 class="card-title employeeMarket">${employeeMarket}</h2>
+                  </div>
                 </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="card-title employeeTitle">${employeeTitle}</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <a class="btn btn-primary mr-2" id="moreInfo" data-id="${employeeId}">More Info</a>
+                    <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#${employeeId}">
+                        Edit
+                      </button>
+                  </div>
+                  <div class="col-6">
+                    <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}" data-name="${firstName} ${lastName}">Delete</a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       </main>
 
       <footer class="footer">
@@ -111,21 +138,9 @@
       </footer>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
       type="text/javascript"
