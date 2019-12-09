@@ -199,6 +199,30 @@ a:active {
     color: var(--body-font) !important;
 }
 
+.btn-fill {
+    background-color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+    color: var(--body-font) !important;
+}
+
+.btn-fill:hover, .btn-fill:focus {
+    background-color: transparent;
+    border: 2px solid var(--highlight-color);
+    color: var(--highlight-color) !important;
+}
+
+.btn-red {
+    background-color: transparent;
+    border: 2px solid #EF5350;
+    color: #EF5350 !important;
+}
+
+.btn-red:hover, .btn-red:focus {
+    background-color: #EF5350;
+    border: 2px solid #EF5350;
+    color: var(--body-font) !important;
+}
+
 .contractValue {
     color: #69F0AE;
     font-size: 1.25rem;

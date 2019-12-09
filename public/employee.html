@@ -75,14 +75,103 @@
       </aside>
 
       <main id="main-div" class="main">
-        <div class="card m-4">
-          <h5 class="card-header employeeName">FIRSTNAME LASTNAME</h5>
+          <div class="card mt-4 mr-4 ml-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <h1 class="card-title employeeName">${firstName} ${lastName}</h1>
+                  </div>
+                  <div class="col-6">
+                    <h2 class="card-title employeeMarket">${employeeMarket}</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="card-title employeeTitle">${employeeTitle}</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <a class="btn btn-primary mr-2" id="moreInfo" data-id="${employeeId}">More Info</a>
+                    <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${employeeId}">Edit Employee</a>
+                  </div>
+                  <div class="col-6">
+                    <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}">Delete</a>
+                </div>
+              </div>
+            </div>
+        <div class="card mt-4 mr-4 ml-4">
           <div class="card-body">
-            <h5 class="card-title employeeTitle">EMPLOYEETITLE</h5>
-            <h5 class="card-title employeeMarket">EMPLOYEEMARKET</h5>
-            <p class="card-text employeeProjects">EMPLOYEEPROJECTS</p>
+            <div class="row">
+              <div class="col-6">
+                <h1 class="card-title employeeName">
+                  ${firstName} ${lastName}
+                </h1>
+              </div>
+              <div class="col-6">
+                <h2 class="card-title employeeMarket">${employeeMarket}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h3 class="card-title employeeTitle">${employeeTitle}</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                >
+                  Launch demo modal
+                </button>
+              </div>
+            </div>
           </div>
-          <div id="chart-div" class="chart-card"></div>
+        </div>
+
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Modal title
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
