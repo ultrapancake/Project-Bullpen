@@ -70,10 +70,10 @@ $(document).ready(function() {
         <div class="row mt-2">
             <div class="col-6">
                 <a class="btn btn-primary mr-2" id="moreInfo" data-id="${uniqueId}">More Info</a>
-                <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${uniqueId}">Edit Employee</a>
+                <a class="btn btn-fill btn-primary" id="editProject" data-id="${uniqueId}">Edit Project</a>
               </div>
               <div class="col-6">
-                <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${uniqueId}">Delete</a>
+                <a class="btn btn-red btn-danger float-right" id="deleteProject" data-id="${uniqueId}">Delete</a>
             </div>
         </div>
       </div>
