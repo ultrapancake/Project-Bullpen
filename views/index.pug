@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .w3-container
+    if locals.user
+      h4 You are logged in!
+    else
+      h4 You are not logged in! Please #[a(href="/login") Log In] to continue.
+
+      <a href="/login"><img src="https://i.imgur.com/oVJ5ERM.png"></a>
+
+
