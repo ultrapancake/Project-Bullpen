@@ -64,13 +64,23 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/employees/:id", function(req, res) {
+  app.get("/api/employee/:id", function(req, res) {
     db.Employees.findOne({
       where: {
         id: req.params.id
       }
     }).then(function(dbEmployees) {
       res.json(dbEmployees);
+    });
+  });
+
+  app.get("/api/project/:id", function(req, res) {
+    db.Projects.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProjects) {
+      res.json(dbProjects);
     });
   });
 
@@ -101,11 +111,18 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/remove-employee/:id", function(req, res) {
-    db.Employees.destroy({
-      where: { id: req.params.id }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+  app.delete("/api/project/:id", function(req, res) {
+    db.Projects.destroy({ where: { id: req.params.id } }).then(function(
+      dbProjects
+    ) {
+      res.json(dbProjects);
     });
   });
+  // app.delete("/api/remove-employee/:id", function(req, res) {
+  //   db.Employees.destroy({
+  //     where: { id: req.params.id }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
 };
