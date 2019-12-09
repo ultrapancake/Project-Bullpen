@@ -43,31 +43,37 @@ $(document).ready(function() {
         projColor = "project";
       }
 
-      var appendFront = `<div class="card mt-2 mb-2 mr-4 ml-4">
+      let appendFront = `<div class="card mt-2 mb-2 mr-4 ml-4">
       <div class="card-header projType ${projColor}">${projType}</div>
       <div class="card-body">
         <div class="row">
-            <div class="col-6">
-                <h1 class="card-title projName">${projName}</h1>
-            </div>
-            <div class="col-6">
-                <h2 class="card-title client">${clientName}</h2>
-            </div>
+          <div class="col-6">
+            <h1 class="card-title projName">${projName}</h1>
+          </div>
+          <div class="col-6">
+            <h2 class="card-title client">${clientName}</h2>
+          </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <h3 class="card-title market">${market}</h3>
-            </div>
-            <div class="col-6">
-                <h4 class="card-title contractValue">$${contractValue}</h4>
-            </div>
+          <div class="col-6">
+            <h3 class="card-title market">${market}</h3>
+          </div>
+          <div class="col-6">
+            <h4 class="card-title contractValue">$${contractValue}</h4>
+          </div>
         </div>
         <div class="row">
-                <p class="ml-3 card-text startDate">${startDate}</p><p class="dash">-</p><p class="finishDate">${endDate}</p>
+          <p class="ml-3 card-text startDate">${startDate}</p>
+          <p class="dash">-</p>
+          <p class="finishDate">${endDate}</p>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="/project/:${uniqueId}" class="mt-4 btn btn-primary viewProj">View Project</a>
+        <div class="row mt-2">
+            <div class="col-6">
+                <a class="btn btn-primary mr-2" id="moreInfo" data-id="${uniqueId}">More Info</a>
+                <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${uniqueId}">Edit Employee</a>
+              </div>
+              <div class="col-6">
+                <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${uniqueId}">Delete</a>
             </div>
         </div>
       </div>
