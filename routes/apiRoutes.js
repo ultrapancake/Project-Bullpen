@@ -93,11 +93,11 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
+  app.delete("/api/employee/:id", function(req, res) {
+    db.Employees.destroy({ where: { id: req.params.id } }).then(function(
+      dbEmployees
     ) {
-      res.json(dbExample);
+      res.json(dbEmployees);
     });
   });
 

@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
     Projects.belongsToMany(models.Employees, {
       // as: [projForeignId],
       through: models.populatedProject, //this can be string or a model,
-      foreignKey: "Projects_rowId"
+      foreignKey: "Projects_rowId",
+      onDelete: "cascade"
     });
   };
 
