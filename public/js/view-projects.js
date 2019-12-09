@@ -73,7 +73,7 @@ $(document).ready(function() {
                 <a class="btn btn-fill btn-primary" id="editProject" data-id="${uniqueId}">Edit Project</a>
               </div>
               <div class="col-6">
-                <a class="btn btn-red btn-danger float-right" id="deleteProject" data-id="${uniqueId}">Delete</a>
+                <a class="btn btn-red btn-danger float-right" id="deleteProject" data-id="${uniqueId}" data-name="${projName}">Delete</a>
             </div>
         </div>
       </div>
@@ -81,5 +81,24 @@ $(document).ready(function() {
 
       $("#project-div").append(appendFront);
     }
+  }
+});
+
+//Delete item on click
+$(document).on("click", "#deleteProject", function() {
+  var id = $(this).data("id");
+  console.log("delete Project on click capture of data-id attr: " + id);
+  var delPrompt = confirm(
+    "Are you sure you want to delete " + $(this).data("name")
+  );
+  if (delPrompt === true) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/project/" + id
+    }).then(function() {
+      location.reload();
+    });
+  } else {
+    return false;
   }
 });

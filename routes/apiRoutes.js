@@ -43,7 +43,7 @@ module.exports = function(app) {
       for (var i = 0; i < dbProjects.length; i++) {
         var ranArray = [];
         ranArray.push(dbProjects[i].id.toString());
-        ranArray.push(dbProjects[i].owner);
+        ranArray.push(dbProjects[i].projName);
         ranArray.push(dbProjects[i].projType);
         ranArray.push(dbProjects[i].startDate);
         ranArray.push(dbProjects[i].finishDate);
@@ -60,6 +60,26 @@ module.exports = function(app) {
   app.get("/api/view-projects", function(req, res) {
     db.Projects.findAll({}).then(function(dbProjects) {
       //send full Object and allow front end to loop through what they need.
+      res.json(dbProjects);
+    });
+  });
+
+  app.get("/api/employee/:id", function(req, res) {
+    db.Employees.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbEmployees) {
+      res.json(dbEmployees);
+    });
+  });
+
+  app.get("/api/project/:id", function(req, res) {
+    db.Projects.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProjects) {
       res.json(dbProjects);
     });
   });
@@ -83,19 +103,26 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
+  app.delete("/api/employee/:id", function(req, res) {
+    db.Employees.destroy({ where: { id: req.params.id } }).then(function(
+      dbEmployees
     ) {
-      res.json(dbExample);
+      res.json(dbEmployees);
     });
   });
 
-  app.delete("/api/remove-employee/:id", function(req, res) {
-    db.Employees.destroy({
-      where: { id: req.params.id }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+  app.delete("/api/project/:id", function(req, res) {
+    db.Projects.destroy({ where: { id: req.params.id } }).then(function(
+      dbProjects
+    ) {
+      res.json(dbProjects);
     });
   });
+  // app.delete("/api/remove-employee/:id", function(req, res) {
+  //   db.Employees.destroy({
+  //     where: { id: req.params.id }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
 };
