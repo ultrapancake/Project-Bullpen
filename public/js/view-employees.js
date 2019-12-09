@@ -43,7 +43,7 @@ $.ajax({
           <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${employeeId}">Edit Employee</a>
         </div>
         <div class="col-6">
-          <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}">Delete</a>
+          <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}" data-name="${firstName} ${lastName}">Delete</a>
       </div>
     </div>
   </div>`;
@@ -52,6 +52,27 @@ $.ajax({
   }
 });
 
-{/* <div class="col-6">
+{
+  /* <div class="col-6">
 <h4 class="card-title employeeProjects">${employeeProjects}</h4>
-</div> */}
+</div> */
+}
+
+// On click button
+$(document).on("click", "#deleteEmployee", function() {
+  var id = $(this).data("id");
+  console.log("delete Employee on click capture of data-id attr: " + id);
+  var delPrompt = confirm(
+    "Are you sure you want to delete " + $(this).data("name")
+  );
+  if (delPrompt === true) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/employee/" + id
+    }).then(function() {
+      location.reload();
+    });
+  } else {
+    return false;
+  }
+});
