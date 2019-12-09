@@ -33,14 +33,17 @@ $.ajax({
         </div>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-12">
           <h3 class="card-title employeeTitle">${employeeTitle}</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <a href="/employee/id:${employeeId}"class="btn btn-primary">More Info</a>
+        <div class="col-6">
+          <a class="btn btn-primary mr-2" id="moreInfo" data-id="${employeeId}">More Info</a>
+          <a class="btn btn-fill btn-primary" id="editEmployee" data-id="${employeeId}">Edit Employee</a>
         </div>
+        <div class="col-6">
+          <a class="btn btn-red btn-danger float-right" id="deleteEmployee" data-id="${employeeId}">Delete</a>
       </div>
     </div>
   </div>`;
