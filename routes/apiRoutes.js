@@ -43,7 +43,7 @@ module.exports = function(app) {
       for (var i = 0; i < dbProjects.length; i++) {
         var ranArray = [];
         ranArray.push(dbProjects[i].id.toString());
-        ranArray.push(dbProjects[i].owner);
+        ranArray.push(dbProjects[i].projName);
         ranArray.push(dbProjects[i].projType);
         ranArray.push(dbProjects[i].startDate);
         ranArray.push(dbProjects[i].finishDate);
