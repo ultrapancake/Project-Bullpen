@@ -121,17 +121,25 @@ module.exports = function(app) {
 
   //Update by id
   app.put("/api/employee-update/:id", function(req, res) {
+    var employeeID = req.params.id;
+    console.log("req fname: " + JSON.stringify(req.body));
     var tempObj = {
-      firstName: req.params.fName,
-      lastName: req.params.lName,
-      empID: req.params.empId,
-      markets: req.params.market,
-      title: req.params.title
+      firstName: req.body.fName,
+      lastName: req.body.lName,
+      empID: req.body.empId,
+      markets: req.body.market,
+      title: req.body.title
     };
-    db.Employees.update(tempObj, { where: { id: req.params.id } }).then(
-      function(dbEmployees) {
-        res.json(dbEmployees);
-      }
-    );
+    // console.log("request data", tempObj, "id", req.params.id);
+    // console.log("db", db);
+    // console.log("dbe", db.Employees);
+    db.Employees.update(tempObj, {
+      returning: true,
+      where: { id: employeeID }
+    }).then(function([rowsUpdate, dbEmployees]) {
+      console.log(JSON.stringify(dbEmployees));
+      // console.log("response data", res);
+      res.json(dbEmployees);
+    });
   });
 };
