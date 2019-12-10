@@ -118,11 +118,28 @@ module.exports = function(app) {
       res.json(dbProjects);
     });
   });
-  // app.delete("/api/remove-employee/:id", function(req, res) {
-  //   db.Employees.destroy({
-  //     where: { id: req.params.id }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+
+  //Update by id
+  app.put("/api/employee-update/:id", function(req, res) {
+    var employeeID = req.params.id;
+    console.log("req fname: " + JSON.stringify(req.body));
+    var tempObj = {
+      firstName: req.body.fName,
+      lastName: req.body.lName,
+      empID: req.body.empId,
+      markets: req.body.market,
+      title: req.body.title
+    };
+    // console.log("request data", tempObj, "id", req.params.id);
+    // console.log("db", db);
+    // console.log("dbe", db.Employees);
+    db.Employees.update(tempObj, {
+      returning: true,
+      where: { id: employeeID }
+    }).then(function([rowsUpdate, dbEmployees]) {
+      console.log(JSON.stringify(dbEmployees));
+      // console.log("response data", res);
+      res.json(dbEmployees);
+    });
+  });
 };
