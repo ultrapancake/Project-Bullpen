@@ -43,7 +43,105 @@ $(document).ready(function() {
         projColor = "project";
       }
 
-      let appendFront = `<div class="card mt-2 mb-2 mr-4 ml-4">
+      let appendFront = `<div
+      class="modal fade"
+      id="modal${uniqueId}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modal${projName}"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal${projName}">
+              ${projName}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="projectName${uniqueId}"
+                  value="${projName}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="clientName${uniqueId}"
+                  value="${clientName}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="projectType${uniqueId}"
+                  value="${projType}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="market${uniqueId}"
+                  value="${market}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contractValue${uniqueId}"
+                  value="${contractValue}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="startDate${uniqueId}"
+                  value="${startDate}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="endDate${uniqueId}"
+                  value="${endDate}"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-fill btn-primary">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-2 mb-2 mr-4 ml-4">
       <div class="card-header projType ${projColor}">${projType}</div>
       <div class="card-body">
         <div class="row">
@@ -68,13 +166,31 @@ $(document).ready(function() {
           <p class="finishDate">${endDate}</p>
         </div>
         <div class="row mt-2">
-            <div class="col-6">
-                <a class="btn btn-primary mr-2" id="moreInfo" data-id="${uniqueId}">More Info</a>
-                <a class="btn btn-fill btn-primary" id="editProject" data-id="${uniqueId}">Edit Project</a>
-              </div>
-              <div class="col-6">
-                <a class="btn btn-red btn-danger float-right" id="deleteProject" data-id="${uniqueId}" data-name="${projName}">Delete</a>
-            </div>
+          <div class="col-6">
+            <a
+              class="btn btn-primary mr-2"
+              id="moreInfo"
+              data-id="${uniqueId}"
+              >More Info</a
+            >
+            <button
+              type="button"
+              class="btn btn-fill btn-primary"
+              data-toggle="modal"
+              data-target="#modal${uniqueId}"
+            >
+              Edit
+            </button>
+          </div>
+          <div class="col-6">
+            <a
+              class="btn btn-red btn-danger float-right"
+              id="deleteProject"
+              data-id="${uniqueId}"
+              data-name="${projName}"
+              >Delete</a
+            >
+          </div>
         </div>
       </div>
     </div>`;
