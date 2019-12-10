@@ -9,7 +9,6 @@ $.ajax({
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
   }
 }).then(function(response) {
-  console.log("View Employees response: " + JSON.stringify(response));
   var empProjects = response.pop();
   console.log(empProjects);
   for (var i = 0; i < response.length; i++) {
@@ -19,10 +18,9 @@ $.ajax({
     var employeeTitle = response[i].title;
     // var employeeProjects = empProjects[i];
     var employeeId = response[i].id;
-    // var empID = response[i].empID;
-    console.log(response[i]);
+    var empID = response[i].empID;
 
-    let empAppend = `          <div class="modal fade" id="${employeeId}" tabindex="-1" role="dialog" aria-labelledby="modal${firstName}${lastName}" aria-hidden="true">
+    let empAppend = `<div class="modal fade" id="modal${employeeId}" tabindex="-1" role="dialog" aria-labelledby="modal${firstName}${lastName}" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -46,13 +44,21 @@ $.ajax({
                     <input type="text" class="form-control" id="title${employeeId}" value="${employeeTitle}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="title${employeeId}" value="${employeeId}">
+                    <input type="text" class="form-control" id="empId${employeeId}" value="${empID}">
                 </div>
               </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-fill btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-fill btn-primary" 
+          id = "changeEmployee"
+          data-id="${employeeId}" 
+          data-fname = "#firstName${employeeId}" 
+          data-lname = "#lastName${employeeId}"
+          data-market = "#market${employeeId}"
+          data-title = "#title${employeeId}"
+          data-empid = "#empId${employeeId}"
+          >Save changes</button>
         </div>
       </div>
     </div>
@@ -75,7 +81,7 @@ $.ajax({
       <div class="row">
         <div class="col-6">
           <a class="btn btn-primary mr-2" id="moreInfo" data-id="${employeeId}">More Info</a>
-          <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#${employeeId}">
+          <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#modal${employeeId}">
               Edit
             </button>
         </div>
@@ -112,4 +118,36 @@ $(document).on("click", "#deleteEmployee", function() {
   } else {
     return false;
   }
+});
+
+$(document).on("click", "#changeEmployee", function() {
+  var id = $(this).data("id");
+  console.log(id);
+
+  var fName = $(this).data("fname");
+  fName = $(fName).val();
+  console.log("first Name ID: " + fName);
+  var lName = $(this).data("lname");
+  lName = $(lName).val();
+  console.log("Last name ID: " + lName);
+  var market = $(this).data("market");
+  market = $(market).val();
+  console.log("market ID: " + market);
+  var title = $(this).data("title");
+  title = $(title).val();
+  console.log("title ID: " + title);
+  var empId = $(this).data("empid");
+  empId = $(empId).val();
+  console.log("empId ID: " + empId);
+
+  var status = { fName, lName, market, title, empId };
+  console.log("patch status: " + JSON.stringify(status));
+
+  $.ajax({
+    type: "PUT",
+    url: "api/employee-update/" + id,
+    data: JSON.stringify(status)
+  }).then(function() {
+    location.reload();
+  });
 });

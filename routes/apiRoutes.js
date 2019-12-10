@@ -118,11 +118,20 @@ module.exports = function(app) {
       res.json(dbProjects);
     });
   });
-  // app.delete("/api/remove-employee/:id", function(req, res) {
-  //   db.Employees.destroy({
-  //     where: { id: req.params.id }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+
+  //Update by id
+  app.put("/api/employee-update/:id", function(req, res) {
+    var tempObj = {
+      firstName: req.params.fName,
+      lastName: req.params.lName,
+      empID: req.params.empId,
+      markets: req.params.market,
+      title: req.params.title
+    };
+    db.Employees.update(tempObj, { where: { id: req.params.id } }).then(
+      function(dbEmployees) {
+        res.json(dbEmployees);
+      }
+    );
+  });
 };
